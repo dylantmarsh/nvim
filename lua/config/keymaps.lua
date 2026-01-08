@@ -10,3 +10,16 @@ map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Terminal down" })
 map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Terminal up" })
 map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Terminal right" })
 
+-- LSP keymaps
+map("n", "<leader>ld", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "<leader>lr", vim.lsp.buf.references, { desc = "References" })
+map("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover" })
+
+-- Buffer
+map("n", "<leader>bd", function()
+  require("mini.bufremove").delete(0, false)
+end, { desc = "Buffer: Close" })
+
+vim.keymap.set("n", "<leader>bD", function()
+  require("mini.bufremove").delete(0, true)
+end, { desc = "Buffer: Force close" })

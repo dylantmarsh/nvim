@@ -19,15 +19,6 @@ return {
       configNamespace = "typescript",
     }
 
-    vim.diagnostic.config({
-      virtual_text = true,
-      signs = true,
-      underline = true,
-      severity_sort = true,
-      update_in_insert = false,
-      float = { border = "rounded" },
-    })
-
     local servers = {
       --- Web
       html = {},
@@ -45,7 +36,10 @@ return {
           typescript = {
             tsdk = (function()
               local root = vim.fs.root(0, { "package.json", "tsconfig.json" })
-              return root .. "/node_modules/typescript/lib"
+              if root then
+                return root .. "/node_modules/typescript/lib"
+              end
+              return nil
             end)(),
           },
         },

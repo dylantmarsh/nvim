@@ -23,3 +23,8 @@ vim.diagnostic.config({
   },
 })
 
+vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#db4b4b" })
+vim.api.nvim_set_hl(0, "DiagnosticSignWarn",  { fg = "#e0af68" })
+vim.api.nvim_set_hl(0, "DiagnosticSignInfo",  { fg = "#0db9d7" })
+vim.api.nvim_set_hl(0, "DiagnosticSignHint",  { fg = "#9d7cd8" })
+
