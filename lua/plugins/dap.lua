@@ -8,9 +8,9 @@ return {
       { "<F12>", function() require("dap").step_out() end, desc = "DAP Step Out" },
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
       { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "DAP Conditional Breakpoint" },
-      { "<leader>dr", function() require("dap").repl.toggle() end, desc = "DAP REPL" },
       { "<leader>dl", function() require("dap").run_last() end, desc = "DAP Run Last" },
       { "<leader>dq", function() require("dap").terminate() end, desc = "DAP Terminate" },
+      { "<leader>dC", function() require("dap").clear_breakpoints() end, desc = "DAP Clear All Breakpoints" },
     },
   },
   -- UI

@@ -91,6 +91,9 @@ return {
       },
     }
 
+    vim.lsp.config('gdscript', {})
+    vim.lsp.enable('gdscript')
+
     require("mason-lspconfig").setup({
       ensure_installed = vim.tbl_keys(servers),
       automatic_installation = true,

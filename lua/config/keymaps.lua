@@ -15,11 +15,3 @@ map("n", "<leader>ld", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<leader>lr", vim.lsp.buf.references, { desc = "References" })
 map("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover" })
 
--- Buffer
-map("n", "<leader>bd", function()
-  require("mini.bufremove").delete(0, false)
-end, { desc = "Buffer: Close" })
-
-vim.keymap.set("n", "<leader>bD", function()
-  require("mini.bufremove").delete(0, true)
-end, { desc = "Buffer: Force close" })
