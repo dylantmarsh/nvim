@@ -65,6 +65,22 @@ return {
             staticcheck = true,
           },
         },
+        on_attach = function(client, bufnr)
+          require("config.lsp").on_attach(client, bufnr)
+
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({
+                async = false,
+                timeout_ms = 2000,
+                filter = function(c)
+                  return c.name == "gopls"
+                end,
+              })
+            end,
+          })
+        end,
       },
 
       -- Python

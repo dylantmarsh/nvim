@@ -41,7 +41,8 @@ return {
           },
           {
             elements = {
-              { id = "repl", size = 1.0 },
+              { id = "repl", size = 0.5 },
+              { id = "console", size= 0.5 },
             },
             size = 0.20, -- height
             position = "bottom",
