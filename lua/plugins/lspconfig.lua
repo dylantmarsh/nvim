@@ -107,8 +107,11 @@ return {
       },
     }
 
-    vim.lsp.config('gdscript', {})
-    vim.lsp.enable('gdscript')
+    vim.lsp.config('roslyn_ls', {
+      cmd = { "roslyn-language-server", "--stdio" },
+      root_dir = vim.fs.root(0, { "*.sln", "*.csproj", ".git" }),
+    })
+    vim.lsp.enable('roslyn_ls')
 
     require("mason-lspconfig").setup({
       ensure_installed = vim.tbl_keys(servers),
